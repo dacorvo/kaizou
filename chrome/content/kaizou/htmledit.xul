@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<window id="htmledit"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	      title="Edit HTML block"
+	      width="600"
+        height="450"
+	      onload="init()">
+  <script type="application/x-javascript" src="chrome://kaizou/content/util.js"/>
+  <script type="application/x-javascript" src="chrome://kaizou/content/transform.js"/>
+  <script type="application/x-javascript" src="chrome://kaizou/content/editor.js"/>
+  <script type="application/x-javascript" src="chrome://kaizou/content/htmledit/Jash_source.js"/>
+  <script type="application/x-javascript" src="chrome://kaizou/content/htmledit.js"/>
+  
+  <browser id="miniBrowser" flex="1" type="chrome" src="chrome://kaizou/content/htmledit/index.html"/>
+  <hbox>
+    <button label="Apply" oncommand="doOK()"/><button label="Cancel" oncommand="doCancel()"/></hbox>
+</window>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+
+<overlay id="kaizouOverlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+// This imports our javascript.
+
+<script type="application/x-javascript" src="chrome://kaizou/content/util.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/comments.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/transform.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/file.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/http.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/urlCheck.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/preferences.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/frames.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/editor.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/manageDlg.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/core.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/kaizouOverlay.js"/>
+
+// Add tools menu items
+<menupopup id="menu_ToolsPopup">
+  <menu label="kaizou" id="kaizou-commands" onpopupshowing='on_tool_menu_showing()'>
+    <menupopup>
+      <menuitem id="kaizou-tool-start" label="Kaizou this page !" oncommand="start_kaizou_editor();" />
+      <menuitem id="kaizou-tool-edit-save" label="Save to disk" oncommand="kaizou_save();"  hidden="true"/>
+      <menuitem id="kaizou-tool-edit-stop" label="Cancel" oncommand="stop_kaizou_editor();" hidden="true"/>
+      <menuitem id="kaizou-tool-help" label="Help and Tutorials" oncommand="openURLInNewTab('http://kaizou.mozdev.org/tutorial.html');" />
+    </menupopup>
+  </menu>  
+</menupopup>
+  
+// Add popup menu items
+<popup id="contentAreaContextMenu">
+  <menuseparator id="kaizou-menu-start" insertafter="menu_preferences" />
+  <menuitem id="kaizou-start" label="Kaizou this page !" oncommand="start_kaizou_editor();"/>
+  <menuitem id="kaizou-edit-img-over" label="Insert image" oncommand="kaizou_insert_image();"  hidden="true"/>
+  <menuitem id="kaizou-edit-modify-html" label="Modify HTML" oncommand="kaizou_modify_html();"  hidden="true"/>
+  <menuitem id="kaizou-edit-text-comment" label="Insert comment" oncommand="kaizou_insert_comment();"  hidden="true"/>
+  <menuseparator id="kaizou-edit-actions-stop" hidden="true"/>
+  <menuitem id="kaizou-edit-save" label="Save to disk" oncommand="kaizou_save();"  hidden="true"/>
+  <menuitem id="kaizou-edit-stop" label="Cancel" oncommand="stop_kaizou_editor();" hidden="true"/>
+</popup>
+
+// Add Kaizou icon in the status bar
+<statusbar id="status-bar">
+  <statusbarpanel id="kaizou-status" insertafter="livemark-button">
+    <label id="kaizouStatusMessage" hidden="true"/>
+    <image id="kaizouStatusImage" width="16" height="14"
+           src="chrome://kaizou/skin/kaizou_off.png"/>
+  </statusbarpanel>
+</statusbar>
+  
+</overlay>
+

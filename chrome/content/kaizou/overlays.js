@@ -1,0 +1,75 @@
+//  Copyright (c) 2006, David Corvoysier
+//  Released under the GPL license
+//  http://www.gnu.org/copyleft/gpl.html
+//
+// File: overlays.js
+// Description: Returns the hard-coded list of overlays in the library
+// This is a workaround to fix a bug in Firefox 1.5
+
+// Get the list of overlays images
+function getOverlays(){
+  return new Array(
+'http://www.kaizou.org/images/overlays/moustache.png',
+'http://www.kaizou.org/images/overlays/angry_monkey_benji_park_01.png',
+'http://www.kaizou.org/images/overlays/ant.png',
+'http://www.kaizou.org/images/overlays/bear_peterm_01.png',
+'http://www.kaizou.org/images/overlays/bee3_mimooh_01.png',
+'http://www.kaizou.org/images/overlays/black-mask.png',
+'http://www.kaizou.org/images/overlays/blue_eye_kilian_valkhof_.png',
+'http://www.kaizou.org/images/overlays/blue_fedora.png',
+'http://www.kaizou.org/images/overlays/cute_skull_fredrik_holmq_01.png',
+'http://www.kaizou.org/images/overlays/female_symbol_dan_gerhar_01.png',
+'http://www.kaizou.org/images/overlays/gas-mask.png',
+'http://www.kaizou.org/images/overlays/glasses.png',
+'http://www.kaizou.org/images/overlays/goalie-mask-simple.png',
+'http://www.kaizou.org/images/overlays/handwithstar_susan_park_01.png',
+'http://www.kaizou.org/images/overlays/happy_monkey_benji_park_01.png',
+'http://www.kaizou.org/images/overlays/heart_cluster_jon_philli_01.png',
+'http://www.kaizou.org/images/overlays/heart_left-highlight_jon_01.png',
+'http://www.kaizou.org/images/overlays/hood.png',
+'http://www.kaizou.org/images/overlays/ink.png',
+'http://www.kaizou.org/images/overlays/iris_and_pupil_chris_hin_01.png',
+'http://www.kaizou.org/images/overlays/jin-jang_multimotyl_01.png',
+'http://www.kaizou.org/images/overlays/left-eye.png',
+'http://www.kaizou.org/images/overlays/left_foot_print_benji_pa_02.png',
+'http://www.kaizou.org/images/overlays/left_hand_print_benji_pa_01.png',
+'http://www.kaizou.org/images/overlays/male_symbol_dan_gerhards_01.png',
+'http://www.kaizou.org/images/overlays/messagebox_critical.png',
+'http://www.kaizou.org/images/overlays/moon-crescent2.png',
+'http://www.kaizou.org/images/overlays/moon-full.png',
+'http://www.kaizou.org/images/overlays/mouth_-_body_part_nicu_b_01.png',
+'http://www.kaizou.org/images/overlays/mouth_-_body_part_nicu_b_02.png',
+'http://www.kaizou.org/images/overlays/mouth_-_body_part_nicu_b_03.png',
+'http://www.kaizou.org/images/overlays/mouth_-_body_part_nicu_b_04.png',
+'http://www.kaizou.org/images/overlays/mouth_-_body_part_nicu_b_05.png',
+'http://www.kaizou.org/images/overlays/mouth_-_body_part_nicu_b_06.png',
+'http://www.kaizou.org/images/overlays/musical_note_nicu_bucule_01.png',
+'http://www.kaizou.org/images/overlays/open-mouth.png',
+'http://www.kaizou.org/images/overlays/peace_symbol_transparen_01.png',
+'http://www.kaizou.org/images/overlays/plush_tux_anita_01.png',
+'http://www.kaizou.org/images/overlays/pointing_finger_01.png',
+'http://www.kaizou.org/images/overlays/rain.png',
+'http://www.kaizou.org/images/overlays/redroundbutton_01.png',
+'http://www.kaizou.org/images/overlays/right-ear.png',
+'http://www.kaizou.org/images/overlays/right-eye.png',
+'http://www.kaizou.org/images/overlays/right_foot_print_benji_p_02.png',
+'http://www.kaizou.org/images/overlays/right_hand_print_benji_p_01.png',
+'http://www.kaizou.org/images/overlays/rock-skull.png',
+'http://www.kaizou.org/images/overlays/rocket.png',
+'http://www.kaizou.org/images/overlays/sakura_01.png',
+'http://www.kaizou.org/images/overlays/santa-cap.png',
+'http://www.kaizou.org/images/overlays/scottie-dog-glasses.png',
+'http://www.kaizou.org/images/overlays/shamrock_for_march_natha_01.png',
+'http://www.kaizou.org/images/overlays/soccer_ballon_tanguy_jac_.png',
+'http://www.kaizou.org/images/overlays/sombrero.png',
+'http://www.kaizou.org/images/overlays/spider.png',
+'http://www.kaizou.org/images/overlays/storm.png',
+'http://www.kaizou.org/images/overlays/sun01.png',
+'http://www.kaizou.org/images/overlays/sunglasses.png',
+'http://www.kaizou.org/images/overlays/three_eyes_01-1.png',
+'http://www.kaizou.org/images/overlays/three_eyes_01-2.png',
+'http://www.kaizou.org/images/overlays/three_eyes_01-3.png',
+'http://www.kaizou.org/images/overlays/thumbs_up_nathan_eady_01.png',
+'http://www.kaizou.org/images/overlays/tophat.png'
+);                   
+}

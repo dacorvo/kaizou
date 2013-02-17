@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="insertCommentDlg"
+    title="Insert a comment"
+    orient="vertical"
+    style="padding:1em;"
+    onload="initCommentDlg();"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript" src="chrome://kaizou/content/util.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/editor.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/comments.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/transform.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/insertCommentDlg.js"/>
+
+<label control="fulltext" value="Select the text to highlight and comment ..."/>
+<textbox id="fulltext" multiline="true" onmouseup="setPattern(getSelectedText());"/>
+<textbox id="pattern" multiline="true" disabled="true" style="color: black;"/>
+<label control="message" value="Type the comment text ..."/>
+<textbox id="message" multiline="true"/>
+
+<hbox id="buttons">
+  <button id="ok" label="Apply" oncommand="doOK();" />
+  <button id="cancel" label="Cancel" oncommand="doCancel();" />
+</hbox>
+
+</window>
+

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<window
+    id="insertImgDlg"
+    title="Insert an overlay image"
+    orient="vertical"
+    style="padding:1em;"
+    onload="setImage(getNextImage());"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript" src="chrome://kaizou/content/util.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/overlays.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/editor.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/transform.js"/>
+<script type="application/x-javascript" src="chrome://kaizou/content/insertImgDlg.js"/>
+
+<vbox>
+
+<groupbox id="selection-box" pack='center'>
+<label value="Choose an image from the library ..."/>
+<spacer height="10"/>
+<groupbox pack='center'>
+<hbox pack='center'>
+<spacer width="10"/>
+<vbox pack='center'>
+<image src="chrome://kaizou/content/resources/left.png"
+  onclick="setImage(getPreviousImage());"/>
+</vbox>
+<groupbox pack='center' width="210" height="110">
+<vbox pack='center' align='center'>
+<image id="poster"  maxwidth="200" maxheight="100"/>
+<html:img id="hidden-image"  onload="doRefresh(getPreview());" style="display: none;"/>
+</vbox>
+</groupbox>
+<vbox pack='center'>
+<image src="chrome://kaizou/content/resources/right.png"
+  onclick="setImage(getNextImage());"/>
+</vbox>
+<spacer width="10"/>
+</hbox>
+</groupbox>
+<label control="src" value="... or type the image URL below"/>
+<spacer height="10"/>
+<hbox><textbox width="230" id="src"/><button label='ok' oncommand="setImage(getSRC());doRefresh(getPreview());"/></hbox>
+</groupbox>
+
+<hbox>
+
+<groupbox id="position-box">
+<label value="Position it using the arrows ..."/>
+<spacer height="10"/>
+<vbox pack='center'>
+<groupbox name="arrow-pad" pack='center'>
+<hbox pack='center'>
+<vbox pack='center'>
+  <image src="chrome://kaizou/content/resources/upper.png"
+    onclick="setYPOS(getYPOS()-10);doRefresh(getPreview());"/>
+  <hbox pack='center'><image src="chrome://kaizou/content/resources/up.png"
+    onclick="setYPOS(getYPOS()-1);doRefresh(getPreview());"/></hbox>
+</vbox>
+</hbox>
+<hbox pack='center'>
+ <image src="chrome://kaizou/content/resources/lefter.png"
+  onclick="setXPOS(getXPOS()-10);doRefresh(getPreview());"/>
+ <vbox pack='center'>
+ <image src="chrome://kaizou/content/resources/left.png"
+    onclick="setXPOS(getXPOS()-1);doRefresh(getPreview());"/>
+ </vbox>
+ <vbox pack='center'>
+ <image src="chrome://kaizou/content/resources/center.png"
+  onclick="setXPOS(0);setYPOS(0);doRefresh(getPreview());"/>
+ </vbox>
+ <vbox pack='center'>
+ <image src="chrome://kaizou/content/resources/right.png"
+  onclick="setXPOS(getXPOS()+1);doRefresh(getPreview());"/>
+ </vbox>
+ <image src="chrome://kaizou/content/resources/righter.png"
+  onclick="setXPOS(getXPOS()+10);doRefresh(getPreview());"/>
+</hbox>
+<hbox pack='center'>
+<vbox pack='center'>
+  <hbox pack='center'>
+  <image src="chrome://kaizou/content/resources/down.png"
+    onclick="setYPOS(getYPOS()+1);doRefresh(getPreview());"/>
+  </hbox>
+  <image src="chrome://kaizou/content/resources/downer.png"
+    onclick="setYPOS(getYPOS()+10);doRefresh(getPreview());"/>
+</vbox>
+</hbox>
+</groupbox>
+<label control="src" value="... or set the offsets manually"/>
+<spacer height="10"/>
+<hbox pack='center'>
+<vbox pack='center'>
+<label control="xpos" value="X"/>
+</vbox>
+<textbox id="xpos" value="0" width="40" oninput="doRefresh(getPreview());"/>
+<vbox pack='center'>
+<label control="ypos" value="Y"/>
+</vbox>
+<textbox id="ypos" value="0" width="40" oninput="doRefresh(getPreview());"/>
+</hbox>
+</vbox>
+</groupbox>
+
+<vbox>
+<groupbox id="size-box">
+<label value="Resize it using the arrows ..."/>
+<spacer height="10"/>
+<vbox pack='center'>
+<groupbox name="arrow-pad" pack='center'>
+<hbox pack='center'>
+ <image src="chrome://kaizou/content/resources/lefter.png"
+  onclick="setZoom(getZoom()-10);doRefresh(getPreview());"/>
+  <vbox pack='center'>
+ <image src="chrome://kaizou/content/resources/left.png"
+  onclick="setZoom(getZoom()-1);doRefresh(getPreview());"/>
+ </vbox>
+<vbox pack='center'>
+ <hbox pack='center'>
+<vbox pack='center'>
+</vbox>
+<textbox id="zoom" value="100" width="30" oninput="doRefresh(getPreview());"/>
+</hbox>
+</vbox>
+ <vbox pack='center'>
+ <image src="chrome://kaizou/content/resources/right.png"
+  onclick="setZoom(getZoom()+1);doRefresh(getPreview());"/>
+ </vbox>
+<image src="chrome://kaizou/content/resources/righter.png"
+  onclick="setZoom(getZoom()+10);doRefresh(getPreview());"/>
+</hbox>
+</groupbox>
+<label control="src" value="... or set the ratio manually"/>
+</vbox>
+</groupbox>
+
+<vbox id="buttons" pack='end'>
+ <spacer height="20"/>
+<checkbox id="preview" label="Preview" onclick="doRefresh(!getPreview());"/>
+<spacer height="40"/>
+<hbox pack='end'>
+  <button id="ok" label="Apply" oncommand="doOK();" />
+  <button id="cancel" label="Cancel" oncommand="doCancel();" />
+</hbox>
+</vbox>
+
+</vbox>
+
+</hbox>
+
+</vbox>
+
+</window>
+

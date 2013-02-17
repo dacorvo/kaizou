@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<window class="dialog"
+	title="kaizou! - About"
+	orient="vertical"
+	autostretch="always"
+	onload="sizeToContent()"
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<!-- Original template by Jed Brown -->
+
+<groupbox align="center" orient="horizontal">
+<vbox pack='center'>
+  <text value="Kaizou" style="text-align:center;font-weight: bold; font-size: x-large;"/>
+  <text style="text-align:center;" value="ver. 0.5.7"/>
+  <separator class="thin"/>
+  <text value="Created By:" style="text-align:center;font-weight: bold;"/>
+  <text value="David Corvoysier" style="text-align:center;" class="url"
+        onclick="window.open('http://www.kaizou.org'); window.close();"/>
+  <separator class="thin"/>
+    <text value="Home Page:" style="text-align:center;font-weight: bold;"/>
+    <text value="http://www.kaizou.org"
+          style="text-align:center;" class="url"
+        onclick="window.open('http://www.kaizou.org/'); window.close();"/>
+  <separator class="large"/>
+  <text value="The Kaizou Extension images" style="text-align:center;"/>
+ <text value="have been gathered on :" style="text-align:center;"/>
+  <separator class="thin"/>
+ <hbox pack='center'>
+<image src="chrome://kaizou/skin/openclipart.png"/>
+</hbox> 
+<text value="http://www.openclipart.org"
+          class="url" style="text-align:center;"
+        onclick="window.open('http://www.openclipart.org/'); window.close();"/>
+  <separator class="thin"/>
+</vbox>
+<spring flex="1"/>
+<image src="chrome://kaizou/skin/kaizou.png"/>
+</groupbox>
+
+  <hbox>
+  <spacer flex="1"/>
+   <button label="Close" oncommand="window.close();"/>
+  </hbox>
+
+</window>

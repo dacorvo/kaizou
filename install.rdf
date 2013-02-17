@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <RDF:Description RDF:about="rdf:#$aBji3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.5"
+                   em:maxVersion="3.0pre" />
+  <RDF:Description RDF:about="urn:mozilla:extension:file:kaizou.jar"
+                   em:package="content/kaizou/"
+                   em:skin="skin/classic/kaizou/" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{b8ccaffc-1f41-45bf-ad7a-1c730d9a4656}"
+                   em:name="kaizou"
+                   em:version="0.5.7"
+                   em:creator="David Corvoysier"
+                   em:description="Modify web pages and share the result with other people !"
+                   em:iconURL="chrome://kaizou/skin/kaizou_s.png"
+                   em:aboutURL="chrome://kaizou/content/about.xul"
+                   em:homepageURL="http://www.kaizou.org">
+    <em:targetApplication RDF:resource="rdf:#$aBji3"/>
+    <em:file RDF:resource="urn:mozilla:extension:file:kaizou.jar"/>
+  </RDF:Description>
+</RDF:RDF>
