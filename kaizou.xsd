@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://www.kaizou.org" targetNamespace="http://www.kaizou.org" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+	<xs:element name="kaizou">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="title" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute ref="xml:lang" use="optional"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="author" type="xs:normalizedString" minOccurs="0"/>
+				<xs:element name="link" type="xs:anyURI" minOccurs="0"/>
+				<xs:element name="description" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute ref="xml:lang" use="optional"/>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="target">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:choice>
+								<xs:element name="uri" type="xs:anyURI"/>
+								<xs:element name="pattern" type="xs:string"/>
+							</xs:choice>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:sequence maxOccurs="unbounded">
+					<xs:element name="transform">
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="xpath" type="xs:string"/>
+								<xs:element name="actions">
+									<xs:complexType>
+										<xs:sequence minOccurs="0" maxOccurs="unbounded">
+											<xs:choice>
+												<xs:element name="img-over">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="src" type="xs:anyURI"/>
+															<xs:element name="xpos" type="xs:integer" minOccurs="0"/>
+															<xs:element name="ypos" type="xs:integer" minOccurs="0"/>
+															<xs:element name="width" type="xs:positiveInteger" minOccurs="0"/>
+															<xs:element name="heigth" type="xs:positiveInteger" minOccurs="0"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="regexp-data">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="pattern" type="xs:string"/>
+															<xs:element name="substitution" type="xs:string"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="comment">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="pattern" type="xs:string"/>
+															<xs:element name="message" type="xs:string"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="set-attr">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="name" type="xs:string"/>
+															<xs:element name="value"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="inner-html">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="html" type="xs:string"/>
+														</xs:sequence>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="insert-node">
+													<xs:complexType>
+														<xs:sequence>
+															<xs:element name="html" type="xs:string"/>
+														</xs:sequence>
+														<xs:attribute name="name" type="xs:string" use="required"/>
+                            <xs:attribute name="after" type="xs:boolean" use="optional" default="false"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
